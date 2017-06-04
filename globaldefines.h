@@ -9,4 +9,5 @@
 #define SETTING_PERSISTANCE "persistance"
 #define SETTING_FADE "fade"
 #define SETTING_PRODUCTION "productions"
-#define DEFAULT_FILE  "iterations=4\nangle=30.0\npersistance=0.7\nfade=0.7\nproductions=F>F"
+#define SETTING_AXIOM "axiom"
+#define DEFAULT_FILE  "iterations=4\nangle=30.0\npersistance=0.7\nfade=0.7\naxiom=T\nproductions=F>F"

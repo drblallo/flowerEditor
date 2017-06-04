@@ -32,7 +32,7 @@ int main(int argc, char *argv[])
 	GlobalSettings* settings(GlobalSettings::getSettings());
     mechanics::MechanicsEngine::StartEngine();
 
-	LSystem system('F');
+	LSystem system(settings->getSettings()->axiom);
 	system.getProductions().addSuccessor(settings->getSettings()->productions);
 	for (int a = 0; a < settings->getSettings()->iterations; a++)
 		system.update();

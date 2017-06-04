@@ -23,7 +23,8 @@ GlobalSettings::GlobalSettings() :
 	angle(30.0f),
 	persistance(0.7),
 	fade(0.7),
-	productions("")
+	productions(""),
+	axiom('T')
 {
 
 }
@@ -33,7 +34,8 @@ GlobalSettings::GlobalSettings(parser::FileParser* pars) :
 	angle(30.0f),
 	persistance(0.7),
 	fade(0.7),
-	productions("")
+	productions(""),
+	axiom('T')
 {
 	try
 	{
@@ -51,6 +53,10 @@ GlobalSettings::GlobalSettings(parser::FileParser* pars) :
 
 		s = SETTING_PRODUCTION;
 		productions = pars->getValue(&s);
+
+		s = SETTING_AXIOM;
+		axiom = pars->getValue(&s)[0];
+		std::cerr << pars->getValue(&s) << std::endl;
 	}
 	catch(std::exception)
 	{

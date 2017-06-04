@@ -40,13 +40,15 @@ FileParser::FileParser(const string* propertyName, const string* defaultFile) : 
 	getline(*p, l);
 	while (l.size() > 0)
 	{
+		if (l.at(0) != '#')
+		{
+			size_t a(l.find('='));	
+			if (a == string::npos)
+				continue;
 
-		size_t a(l.find('='));	
-		if (a == string::npos)
-			continue;
-
-		readValues.push_back(l.substr(0, a));
-		readValues.push_back(l.substr(a+1, l.size()));
+			readValues.push_back(l.substr(0, a));
+			readValues.push_back(l.substr(a+1, l.size()));
+		}
 
 		getline(*p, l);
 	}

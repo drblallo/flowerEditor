@@ -14,6 +14,7 @@ class GlobalSettings
 		float persistance;
 		float fade;
 		std::string productions;
+		char axiom;
 
 	private:
 		GlobalSettings();
